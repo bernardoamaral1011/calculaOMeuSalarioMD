@@ -1,0 +1,20 @@
+{
+  "name": "calculaOMeuSalarioMD",
+  "version": "1.0.0",
+  "description": "Ferramenta de cálculo de salário a recibos verdes para médicos dentistas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardoamaral1011/calculaOMeuSalarioMD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernardoamaral1011/calculaOMeuSalarioMD/issues"
+  },
+  "homepage": "https://github.com/bernardoamaral1011/calculaOMeuSalarioMD#readme"
+}
