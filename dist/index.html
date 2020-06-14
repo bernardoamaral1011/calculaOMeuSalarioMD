@@ -19,9 +19,7 @@
       copyright © 2020
     </div>
   </div>
-  
   <div id="line-1"></div>
-  
   <div id="main-box">
     <div id="title">
       <h2>QUAL O SALÁRIO DE UM JOVEM MÉDICO DENTISTA EM PORTUGAL?</h2>
@@ -29,10 +27,10 @@
 
     <div id="intro">
       <p>
-        Esta ferramenta calcula o salário líquido aproximado de um prestador de serviços contratado a recibos verdes. Ao valor bruto é descontado o valor estimado de pagamento à segurança social, considerando que és solteiro, e a retenção na fonte caso se justifique (obrigatória quando o rendimento anual ultrapassa os 10.000€) - obtém-se assim o salário líquido.
+        Esta ferramenta calcula o salário líquido aproximado de um prestador de serviços contratado a recibos verdes. Ao valor bruto é descontado o valor estimado de pagamento à segurança social, considerando que o trabalhador é solteiro; e a retenção na fonte, caso se justifique (obrigatória quando o rendimento anual ultrapassa os 10.000€), obtendo-se assim o salário líquido.
       </p>
       <p>
-        Também é feita uma comparação com o salário  mínimo nacional líquido, tendo em conta os subsídios de alimentação,  natal e férias.    
+        Também é feita uma comparação com o salário mínimo nacional líquido, tendo em conta os subsídios de alimentação, natal e férias.    
       </p> 
     </div>
 
@@ -41,16 +39,19 @@
         <input id="f1" type="text" onkeypress="return isNumberKey(event)" name="f1" value="40">
       </p>
       <p>Custo médio de consulta (€): 
-        <input id="f2" type="text" onkeypress="return isNumberKey(event)" name="f2" value="25" disabled="">
+        <input id="f2" type="text" onkeypress="return isNumberKey(event)" name="f2" value="25">
       </p>
       <p>Nº de consultas agendadas por dia: 
         <input id="f3" type="text" onkeypress="return isNumberKey(event)" name="f3" value="10">
       </p>
       <p>Nº de consultas desmarcadas por dia: 
-        <input id="f4" type="text" onkeypress="return isNumberKey(event)" name="f4" value="2" disabled="">
+        <input id="f4" type="text" onkeypress="return isNumberKey(event)" name="f4" value="2">
+      </p>
+      <p>Nº de dias de trabalho por semana: 
+        <input id="f6" type="text" onkeypress="return isNumberKey(event)" name="f6" value="5">
       </p>
       <p>Percentagem (%): 
-        <input id="f5" type="text" onkeypress="return isNumberKey(event)" name="f5" value="40">
+        <input id="f5" type="text" onkeypress="return isNumberKey(event)" name="f5" value="18">
       </p>
     </div>
   
@@ -73,6 +74,8 @@
         <span id="o_liq"></span><span style="font-weight: 400;" id="o_liq_v"></span>
       </p>
       <p id="comp"></p>
+      <p id="comp2"></p>
+
     </div>
     
   </div>

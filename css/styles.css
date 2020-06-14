@@ -71,7 +71,7 @@ h2{
   background: #F5F5F5;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
   border-radius: 75px;
-  width: 40rem;
+  width: 47rem;
   height: auto;
   left: 50%;
   top: 15%;
@@ -157,7 +157,7 @@ p{
 #button-1{
   text-align: center;
   padding-top:2.5rem;
-  padding-bottom:1rem;
+  padding-bottom:0rem;
 }
 
 #button-1 > button{
@@ -178,8 +178,14 @@ p{
   width: 70%;
 
   text-decoration: none;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   cursor:pointer;
+}
+
+#button-1 > button:active {
+  transform: translateY(4px);
+  box-shadow: 0 5px #666;
+
 }
 
 #warning{
@@ -198,7 +204,7 @@ p{
 #results-1{
   text-align: center;
   padding-top:1.5rem;
-  padding-bottom:1.5rem;
+  padding-bottom:0.5rem;
   height: auto;
 }
 
@@ -211,7 +217,13 @@ p{
 #comp {
   padding-top:1rem;
   text-transform: uppercase;
+  padding-bottom: 0px;
 }
+#comp2 {
+  line-height: 1.4rem !important;
+  text-transform: uppercase;
+}
+
 
 #copyright{
   position:absolute;
