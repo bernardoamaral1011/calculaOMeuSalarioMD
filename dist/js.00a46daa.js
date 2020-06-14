@@ -247,9 +247,9 @@ function calcResult() {
     }
 
     if (comp2 > 0) {
-      aux2 = "Trabalhas mais " + Math.abs(comp2).toFixed(0) + " horas que um trabalhador de ordenado mínimo.";
+      aux2 = "Trabalhas mais " + Math.abs(comp2).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
     } else if (comp2 < 0) {
-      aux2 = "Trabalhas menos " + Math.abs(comp2).toFixed(0) + " horas que um trabalhador de ordenado mínimo.";
+      aux2 = "Trabalhas menos " + Math.abs(comp2).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
     } else {
       aux2 = "Trabalhas o mesmo número de horas que um trabalhador de ordenado mínimo.";
     }
@@ -305,7 +305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51115" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52024" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

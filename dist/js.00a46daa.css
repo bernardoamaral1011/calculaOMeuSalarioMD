@@ -343,12 +343,20 @@ p{
 }
 
 @media screen and (max-width: 425px){
+  #form-1{
+    padding: 0 20px;
+  }
   #form-1 > p {
-    font-size: 0.9rem;
+    font-size: 0.65rem;
     line-height: 1.2rem;
     letter-spacing: 0rem;
     text-align: left;
-    padding-bottom:2rem;
+  }
+
+  #form-1 > p > input {
+    text-align: center;
+    float:right; 
+    margin: -5px 0 !important;
   }
 
   #button-1{
