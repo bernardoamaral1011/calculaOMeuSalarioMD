@@ -59,7 +59,7 @@ function calcResult() {
     let comp = ordenadoMensalL - 755.51;
     let aux = "";
     let aux2 = "";
-    let comp2 = hSemanais*4 - 40*4;  
+    let comp2 = hSemanais*4 - 40*4;
 
     if (comp >= 0) {
       aux =
@@ -78,12 +78,12 @@ function calcResult() {
       aux2 =
         "Trabalhas mais " +
         Math.abs(comp2).toFixed(0) +
-        " horas que um trabalhador de ordenado mínimo.";
+        " horas/mês que um trabalhador de ordenado mínimo.";
     } else if(comp2 < 0){
       aux2 =
         "Trabalhas menos " +
         Math.abs(comp2).toFixed(0) +
-        " horas que um trabalhador de ordenado mínimo.";
+        " horas/mês que um trabalhador de ordenado mínimo.";
     } else {
       aux2 =
         "Trabalhas o mesmo número de horas que um trabalhador de ordenado mínimo.";
