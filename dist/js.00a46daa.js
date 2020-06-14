@@ -204,7 +204,9 @@ function calcResult() {
   var nMedioConsultasDesmDia = document.getElementById("f4").value;
   var percentagem = document.getElementById("f5").value / 100; // Verify if any of inputs is nulxl, then output if true
 
-  if (hSemanais === "" || cMedioConsulta === "" || nMedioConsultasDia === "" || nMedioConsultasDesmDia === "" || percentagem === "") {
+  console.log(percentagem);
+
+  if (hSemanais === "" || cMedioConsulta === "" || nMedioConsultasDia === "" || nMedioConsultasDesmDia === "" || percentagem === 0) {
     var warn = document.getElementById("warning");
     warn.innerHTML = "Atenção: Todos os campos devem estar preenchidos!";
   } else {
@@ -277,7 +279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53797" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59572" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

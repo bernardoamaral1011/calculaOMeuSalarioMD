@@ -12,12 +12,13 @@ function calcResult() {
   let percentagem = document.getElementById("f5").value / 100;
 
   // Verify if any of inputs is nulxl, then output if true
+  console.log(percentagem)
   if (
     hSemanais === "" ||
     cMedioConsulta === "" ||
     nMedioConsultasDia === "" ||
     nMedioConsultasDesmDia === "" ||
-    percentagem === ""
+    percentagem === 0
   ) {
     let warn = document.getElementById("warning");
     warn.innerHTML = "Atenção: Todos os campos devem estar preenchidos!";
