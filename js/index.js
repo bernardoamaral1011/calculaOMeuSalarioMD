@@ -44,8 +44,8 @@ function calcResult() {
     }
 
     // colocar resultados nos p's
-    document.getElementById("o_dia").innerHTML = "Ordenado por dia: ";
-    document.getElementById("o_sem").innerHTML = "Valor por hora: ";
+    document.getElementById("o_dia").innerHTML = "Valo ganho por dia: ";
+    document.getElementById("o_sem").innerHTML = "Valor ganho por hora: ";
     document.getElementById("o_bru").innerHTML = "Ordenado mensal bruto: ";
     document.getElementById("o_liq").innerHTML = "Ordenado mensal líquido: ";
 

@@ -227,8 +227,8 @@ function calcResult() {
     } // colocar resultados nos p's
 
 
-    document.getElementById("o_dia").innerHTML = "Ordenado por dia: ";
-    document.getElementById("o_sem").innerHTML = "Valor por hora: ";
+    document.getElementById("o_dia").innerHTML = "Valo ganho por dia: ";
+    document.getElementById("o_sem").innerHTML = "Valor ganho por hora: ";
     document.getElementById("o_bru").innerHTML = "Ordenado mensal bruto: ";
     document.getElementById("o_liq").innerHTML = "Ordenado mensal líquido: ";
     document.getElementById("o_dia_v").innerHTML = ordenadoDia.toFixed(0) + "€";
@@ -305,7 +305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50181" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51115" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
