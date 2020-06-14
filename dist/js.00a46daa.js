@@ -227,7 +227,7 @@ function calcResult() {
     } // colocar resultados nos p's
 
 
-    document.getElementById("o_dia").innerHTML = "Valo ganho por dia: ";
+    document.getElementById("o_dia").innerHTML = "Valor ganho por dia: ";
     document.getElementById("o_sem").innerHTML = "Valor ganho por hora: ";
     document.getElementById("o_bru").innerHTML = "Ordenado mensal bruto: ";
     document.getElementById("o_liq").innerHTML = "Ordenado mensal líquido: ";
@@ -241,9 +241,9 @@ function calcResult() {
     var comp2 = hSemanais * 4 - 40 * 4;
 
     if (comp >= 0) {
-      aux = "Ganhas mais " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ que o ordenado mínimo!";
+      aux = "Ganhas mais " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ líquidos que o ordenado mínimo!";
     } else {
-      aux = "Ganhas menos " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ que o ordenado mínimo!";
+      aux = "Ganhas menos " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ líquidos que o ordenado mínimo!";
     }
 
     if (comp2 > 0) {
@@ -305,7 +305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52024" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55615" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

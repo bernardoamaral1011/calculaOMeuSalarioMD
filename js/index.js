@@ -44,7 +44,7 @@ function calcResult() {
     }
 
     // colocar resultados nos p's
-    document.getElementById("o_dia").innerHTML = "Valo ganho por dia: ";
+    document.getElementById("o_dia").innerHTML = "Valor ganho por dia: ";
     document.getElementById("o_sem").innerHTML = "Valor ganho por hora: ";
     document.getElementById("o_bru").innerHTML = "Ordenado mensal bruto: ";
     document.getElementById("o_liq").innerHTML = "Ordenado mensal líquido: ";
@@ -65,12 +65,12 @@ function calcResult() {
       aux =
         "Ganhas mais " +
         Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) +
-        "€ que o ordenado mínimo!";
+        "€ líquidos que o ordenado mínimo!";
     } else{
       aux =
         "Ganhas menos " +
         Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) +
-        "€ que o ordenado mínimo!";
+        "€ líquidos que o ordenado mínimo!";
     }
 
 

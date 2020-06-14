@@ -323,6 +323,10 @@ p{
     letter-spacing: 0;
     font-size: 0.9rem;
   }
+
+  #comp, #comp2{
+    line-height: 30px !important;
+  }
 }
 
 @media screen and (max-width: 416px){
@@ -380,6 +384,40 @@ p{
   }
   #comp{
     line-height: 1.4rem !important;
+  }
+}
+
+@media screen and (max-width: 370px){
+  #form-1 > p{
+    height: 55px;
+  }
+  #form-1 > p > input{
+    margin: 2px !important;
+  }
+  #button-1{
+    padding-top:0;
+  }
+
+  #button-1 > button{
+    font-size: 0.7rem;
+    height: 2rem;
+    width: 70%;
+  }
+  #results-1{
+    padding-top:10px;
+  }
+  #results-1 > p{
+    font-size: 0.6rem !important;
+  }
+}
+
+@media screen and (max-width: 340px){
+  #intro > p{
+    font-size: 0.6rem;
+  }
+
+  #title > h2{
+    font-size: 0.7rem;  
   }
 }
 
