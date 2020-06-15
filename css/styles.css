@@ -367,9 +367,7 @@ p{
     padding: 0rem;
   }
 
-  #bg-2{
-    height: 700px;
-  }
+
 
   #bg-3{
     position: absolute;
@@ -387,7 +385,7 @@ p{
   }
 }
 
-@media screen and (max-width: 370px){
+@media screen and (max-width: 395px){
   #form-1 > p{
     height: 55px;
   }
@@ -411,7 +409,7 @@ p{
   }
 }
 
-@media screen and (max-width: 340px){
+@media screen and (max-width: 345px){
   #intro > p{
     font-size: 0.6rem;
   }
