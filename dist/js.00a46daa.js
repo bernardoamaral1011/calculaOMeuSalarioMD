@@ -117,7 +117,125 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"js/salary.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ordenadoMinimoL = 755.51;
+var horasPSemanaMinimo = 40;
+
+var Salary = /*#__PURE__*/function () {
+  function Salary(hSemanais, cMedioConsulta, nMedioConsultasDia, nMedioConsultasDesmDia, percentagem, nDiasPSemana) {
+    _classCallCheck(this, Salary);
+
+    this.hSemanais = hSemanais;
+    this.cMedioConsulta = cMedioConsulta;
+    this.nMedioConsultasDia = nMedioConsultasDia;
+    this.nMedioConsultasDesmDia = nMedioConsultasDesmDia;
+    this.percentagem = percentagem;
+    this.nDiasPSemana = nDiasPSemana;
+  }
+
+  _createClass(Salary, [{
+    key: "calcOrdenadoDia",
+    value: function calcOrdenadoDia() {
+      return (this.nMedioConsultasDia - this.nMedioConsultasDesmDia) * this.cMedioConsulta * this.percentagem;
+    }
+  }, {
+    key: "calcOrdenadoSem",
+    value: function calcOrdenadoSem() {
+      return this.ordenadoDia * this.nDiasPSemana;
+    }
+  }, {
+    key: "calcValorPHora",
+    value: function calcValorPHora() {
+      return this.ordenadoSem / this.hSemanais;
+    }
+  }, {
+    key: "calcOrdenadoMensalB",
+    value: function calcOrdenadoMensalB() {
+      return this.ordenadoSem * 4;
+    }
+  }, {
+    key: "calcOrdenadoMensalL",
+    value: function calcOrdenadoMensalL() {
+      if (this.ordenadoMensalB * 12 >= 10000) {
+        return this.ordenadoMensalB - this.ordenadoMensalB * 0.25 - 0.214 * 0.7 * this.ordenadoMensalB;
+      } else {
+        return this.ordenadoMensalB - 0.214 * 0.7 * this.ordenadoMensalB;
+      }
+    }
+  }, {
+    key: "calcCompMinimoLiquido",
+    value: function calcCompMinimoLiquido() {
+      return this.ordenadoMensalL - ordenadoMinimoL;
+    }
+  }, {
+    key: "calcCompMinimoHoras",
+    value: function calcCompMinimoHoras() {
+      return this.hSemanais * 4 - horasPSemanaMinimo * 4;
+    }
+  }, {
+    key: "ordenadoDia",
+    get: function get() {
+      return this.calcOrdenadoDia();
+    }
+  }, {
+    key: "ordenadoSem",
+    get: function get() {
+      return this.calcOrdenadoSem();
+    }
+  }, {
+    key: "valorPHora",
+    get: function get() {
+      return this.calcValorPHora();
+    }
+  }, {
+    key: "ordenadoMensalB",
+    get: function get() {
+      return this.calcOrdenadoMensalB();
+    }
+  }, {
+    key: "ordenadoMensalL",
+    get: function get() {
+      return this.calcOrdenadoMensalL();
+    }
+  }, {
+    key: "compMinimoLiquido",
+    get: function get() {
+      return this.calcCompMinimoLiquido();
+    }
+  }, {
+    key: "compMinimoHoras",
+    get: function get() {
+      return this.calcCompMinimoHoras();
+    }
+  }], [{
+    key: "checkValues",
+    value: function checkValues(hSemanais, cMedioConsulta, nMedioConsultasDia, nMedioConsultasDesmDia, percentagem, nDiasPSemana) {
+      if (hSemanais === "" || hSemanais === "0" || cMedioConsulta === "" || cMedioConsulta === "0" || nMedioConsultasDia === "" || nMedioConsultasDia === "0" || nMedioConsultasDesmDia === "" || percentagem === 0 || nDiasPSemana === "" || nDiasPSemana === "0" || Number(nDiasPSemana) > 7 || percentagem > 1 || Number(cMedioConsulta) > 10000 || Number(nMedioConsultasDia) > 100 || Number(hSemanais) > 24 * 7 || Number(nMedioConsultasDesmDia) >= Number(nMedioConsultasDia)) {
+        return false;
+      }
+
+      return true;
+    }
+  }]);
+
+  return Salary;
+}();
+
+exports.default = Salary;
+},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -192,7 +310,11 @@ module.hot.accept(reloadCSS);
 },{"C:\\Users\\ASUS\\Desktop\\Current Projects\\calculaOMeuSalarioMD\\assets\\img\\bg.jpg":[["bg.c12ef667.jpg","assets/img/bg.jpg"],"assets/img/bg.jpg"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
+var _salary = _interopRequireDefault(require("./salary"));
+
 require("../css/styles.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var calcButton = document.getElementById("button-1-b");
 calcButton.addEventListener("click", calcResult, false);
@@ -203,81 +325,48 @@ function calcResult() {
   var nMedioConsultasDia = document.getElementById("f3").value;
   var nMedioConsultasDesmDia = document.getElementById("f4").value;
   var percentagem = document.getElementById("f5").value / 100;
-  var nDiasPSemana = document.getElementById("f6").value; // Verify if any of inputs is nulxl, then output if true
+  var nDiasPSemana = document.getElementById("f6").value;
 
-  console.log(percentagem);
-
-  if (hSemanais === "" || cMedioConsulta === "" || nMedioConsultasDia === "" || nMedioConsultasDesmDia === "" || percentagem === 0 || nDiasPSemana === "") {
+  if (!_salary.default.checkValues(hSemanais, cMedioConsulta, nMedioConsultasDia, nMedioConsultasDesmDia, percentagem, nDiasPSemana)) {
     var warn = document.getElementById("warning");
-    warn.innerHTML = "Atenção: Todos os campos devem estar preenchidos!";
+    warn.innerHTML = "Atenção: Todos os campos devem estar devidamente preenchidos!";
   } else {
     var _warn = document.getElementById("warning");
 
     _warn.innerHTML = "";
-    var ordenadoDia = (nMedioConsultasDia - nMedioConsultasDesmDia) * cMedioConsulta * percentagem;
-    var ordenadoSem = ordenadoDia * nDiasPSemana;
-    var valorPHora = ordenadoSem / hSemanais;
-    var ordenadoMensalB = ordenadoSem * 4;
-    var ordenadoMensalL = 0;
-
-    if (ordenadoMensalB * 12 >= 10000) {
-      ordenadoMensalL = ordenadoMensalB - ordenadoMensalB * 0.25 - 0.214 * 0.7 * ordenadoMensalB;
-    } else {
-      ordenadoMensalL = ordenadoMensalB - 0.214 * 0.7 * ordenadoMensalB;
-    } // colocar resultados nos p's
-
-
+    var mySalary = new _salary.default(hSemanais, cMedioConsulta, nMedioConsultasDia, nMedioConsultasDesmDia, percentagem, nDiasPSemana);
     document.getElementById("o_dia").innerHTML = "Valor ganho por dia: ";
     document.getElementById("o_sem").innerHTML = "Valor ganho por hora: ";
     document.getElementById("o_bru").innerHTML = "Ordenado mensal bruto: ";
     document.getElementById("o_liq").innerHTML = "Ordenado mensal líquido: ";
-    document.getElementById("o_dia_v").innerHTML = ordenadoDia.toFixed(0) + "€";
-    document.getElementById("o_sem_v").innerHTML = valorPHora.toFixed(0) + "€";
-    document.getElementById("o_bru_v").innerHTML = ordenadoMensalB.toFixed(0) + "€";
-    document.getElementById("o_liq_v").innerHTML = ordenadoMensalL.toFixed(0) + "€";
-    var comp = ordenadoMensalL - 755.51;
-    var aux = "";
-    var aux2 = "";
-    var comp2 = hSemanais * 4 - 40 * 4;
+    document.getElementById("o_dia_v").innerHTML = mySalary.ordenadoDia.toFixed(0) + "€";
+    document.getElementById("o_sem_v").innerHTML = mySalary.valorPHora.toFixed(0) + "€";
+    document.getElementById("o_bru_v").innerHTML = mySalary.ordenadoMensalB.toFixed(0) + "€";
+    document.getElementById("o_liq_v").innerHTML = mySalary.ordenadoMensalL.toFixed(0) + "€";
 
-    if (comp >= 0) {
-      aux = "Ganhas mais " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ líquidos que o ordenado mínimo!";
+    if (mySalary.compMinimoLiquido >= 0) {
+      document.getElementById("comp").innerHTML = "Ganhas mais " + Math.abs(mySalary.compMinimoLiquido).toFixed(0) + "€ líquidos que o ordenado mínimo!";
     } else {
-      aux = "Ganhas menos " + Math.abs(Math.round((comp + Number.EPSILON) * 100) / 100).toFixed(0) + "€ líquidos que o ordenado mínimo!";
+      document.getElementById("comp").innerHTML = "Ganhas menos " + Math.abs(mySalary.compMinimoLiquido).toFixed(0) + "€ líquidos que o ordenado mínimo!";
     }
 
-    if (comp2 > 0) {
-      aux2 = "Trabalhas mais " + Math.abs(comp2).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
-    } else if (comp2 < 0) {
-      aux2 = "Trabalhas menos " + Math.abs(comp2).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
+    if (mySalary.compMinimoHoras > 0) {
+      document.getElementById("comp2").innerHTML = "Trabalhas mais " + Math.abs(mySalary.compMinimoHoras).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
+    } else if (mySalary.compMinimoHoras < 0) {
+      document.getElementById("comp2").innerHTML = "Trabalhas menos " + Math.abs(mySalary.compMinimoHoras).toFixed(0) + " horas/mês que um trabalhador de ordenado mínimo.";
     } else {
-      aux2 = "Trabalhas o mesmo número de horas que um trabalhador de ordenado mínimo.";
+      document.getElementById("comp2").innerHTML = "Trabalhas o mesmo número de horas que um trabalhador de ordenado mínimo.";
     }
-
-    document.getElementById("comp").innerHTML = aux;
-    document.getElementById("comp2").innerHTML = aux2;
   }
-}
+} // only numbers are accepted as input
+
 
 window.isNumberKey = function isNumberKey(evt) {
   var charCode = evt.which ? evt.which : event.keyCode;
   if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
   return true;
 };
-/*
-preçoconsulta
-nconsultas
-nº horas por semana
-ndesmarcadas
-nº dias por semana
-percentagem
-
-ordenado por semana -> valor por hora
-
-trabalhas mais X horas que um trabalhador de ordenado mínimo
-
-*/
-},{"../css/styles.css":"css/styles.css"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./salary":"js/salary.js","../css/styles.css":"css/styles.css"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -305,7 +394,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49759" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61540" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

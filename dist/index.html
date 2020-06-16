@@ -1,88 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calcula o teu salário MD</title>
-  <link rel="icon" href="/icon.ffc05a48.png">
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/js.00a46daa.css"></head>
-<body>
-  
-  <div id="logo">
-    <a href="https://miguelpavao.com">
-      <img src="/logo.fb412750.png" alt="Logo">
-    </a>
-  </div>
-  <div id="bg-1"></div>
-  <div id="bg-2">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula o teu salário MD</title>
+    <link rel="icon" href="/icon.ffc05a48.png">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/js.00a46daa.css"></head>
+  <body>
+    <div id="logo">
+      <a href="https://miguelpavao.com">
+        <img src="/logo.fb412750.png" alt="Logo">
+      </a>
+    </div>
+    <div id="bg-1"></div>
+    <div id="bg-2">
+      <div id="copyright">
+        copyright © 2020
+      </div>
+    </div>
+    <div id="line-1"></div>
+    <div id="main-box">
+      <div id="title">
+        <h2>QUAL O SALÁRIO DE UM JOVEM MÉDICO DENTISTA EM PORTUGAL?</h2>
+      </div>
 
-    <div id="copyright">
-      copyright © 2020
-    </div>
-  </div>
-  <div id="line-1"></div>
-  <div id="main-box">
-    <div id="title">
-      <h2>QUAL O SALÁRIO DE UM JOVEM MÉDICO DENTISTA EM PORTUGAL?</h2>
+      <div id="intro">
+        <p>
+          Esta ferramenta calcula o salário líquido aproximado de um prestador
+          de serviços contratado a recibos verdes, que opte pelo regime
+          simplificado. Ao valor bruto é descontado o valor estimado de
+          pagamento à segurança social e o valor estimado do imposto sobre
+          rendimento (valor retido na fonte), obtendo-se assim o salário líquido
+          mensal.
+        </p>
+        <p>
+          Também é feita uma comparação com o salário mínimo nacional líquido,
+          tendo em conta os subsídios de alimentação, natal e férias.
+        </p>
+      </div>
+
+      <div id="form-1">
+        <p>
+          Nº de horas de trabalho semanais:
+          <input id="f1" type="text" onkeypress="return isNumberKey(event)" name="f1" value="40">
+        </p>
+        <p>
+          Custo médio de consulta (€):
+          <input id="f2" type="text" onkeypress="return isNumberKey(event)" name="f2" value="25">
+        </p>
+        <p>
+          Nº de consultas agendadas por dia:
+          <input id="f3" type="text" onkeypress="return isNumberKey(event)" name="f3" value="10">
+        </p>
+        <p>
+          Nº de consultas desmarcadas por dia:
+          <input id="f4" type="text" onkeypress="return isNumberKey(event)" name="f4" value="2">
+        </p>
+        <p>
+          Nº de dias de trabalho por semana:
+          <input id="f6" type="text" onkeypress="return isNumberKey(event)" name="f6" value="5">
+        </p>
+        <p>
+          Percentagem (%):
+          <input id="f5" type="text" onkeypress="return isNumberKey(event)" name="f5" value="18">
+        </p>
+      </div>
+
+      <div id="button-1">
+        <button id="button-1-b">CALCULA O MEU SALÁRIO!</button>
+        <p id="warning"></p>
+      </div>
+
+      <div id="results-1">
+        <p>
+          <span id="o_sem"></span><span style="font-weight: 400;" id="o_sem_v"></span>
+        </p>
+        <p>
+          <span id="o_dia"></span><span style="font-weight: 400;" id="o_dia_v"></span>
+        </p>
+        <p>
+          <span id="o_bru"></span><span style="font-weight: 400;" id="o_bru_v"></span>
+        </p>
+        <p>
+          <span id="o_liq"></span><span style="font-weight: 400;" id="o_liq_v"></span>
+        </p>
+        <p id="comp"></p>
+        <p id="comp2"></p>
+      </div>
     </div>
 
-    <div id="intro">
-      <p>
-        Esta ferramenta calcula o salário líquido aproximado de um prestador de serviços contratado a recibos verdes, que opte pelo regime simplificado. Ao valor bruto é descontado o valor estimado de pagamento à segurança social e o valor estimado do imposto sobre rendimento (valor retido na fonte), obtendo-se assim o salário líquido mensal.
-      </p>
-      <p>
-        Também é feita uma comparação com o salário mínimo nacional líquido, tendo em conta os subsídios de alimentação, natal e férias.
-      </p> 
-    </div>
-
-    <div id="form-1">
-      <p>Nº de horas de trabalho semanais: 
-        <input id="f1" type="text" onkeypress="return isNumberKey(event)" name="f1" value="40">
-      </p>
-      <p>Custo médio de consulta (€): 
-        <input id="f2" type="text" onkeypress="return isNumberKey(event)" name="f2" value="25">
-      </p>
-      <p>Nº de consultas agendadas por dia: 
-        <input id="f3" type="text" onkeypress="return isNumberKey(event)" name="f3" value="10">
-      </p>
-      <p>Nº de consultas desmarcadas por dia: 
-        <input id="f4" type="text" onkeypress="return isNumberKey(event)" name="f4" value="2">
-      </p>
-      <p>Nº de dias de trabalho por semana: 
-        <input id="f6" type="text" onkeypress="return isNumberKey(event)" name="f6" value="5">
-      </p>
-      <p>Percentagem (%): 
-        <input id="f5" type="text" onkeypress="return isNumberKey(event)" name="f5" value="18">
-      </p>
-    </div>
-  
-    <div id="button-1">
-      <button id="button-1-b">CALCULA O MEU SALÁRIO!</button>
-      <p id="warning"></p>
-    </div>
-    
-    <div id="results-1">
-      <p>
-        <span id="o_sem"></span><span style="font-weight: 400;" id="o_sem_v"></span>
-      </p>
-      <p>
-        <span id="o_dia"></span><span style="font-weight: 400;" id="o_dia_v"></span>
-      </p>
-      <p>
-        <span id="o_bru"></span><span style="font-weight: 400;" id="o_bru_v"></span>
-      </p>
-      <p>
-        <span id="o_liq"></span><span style="font-weight: 400;" id="o_liq_v"></span>
-      </p>
-      <p id="comp"></p>
-      <p id="comp2"></p>
-
-    </div>
-    
-  </div>
-  
-  <script src="/js.00a46daa.js"></script>
-</body>
+    <script src="/js.00a46daa.js"></script>
+  </body>
 </html>
